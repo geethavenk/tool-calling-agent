@@ -1,18 +1,30 @@
 # Tool-Calling Agent
 
-A LangGraph ReAct agent with five tools: calculator, unit converter,
-datetime, text counter, and language lookup.
+A simple tool-calling AI agent built with Python, LangChain, and LangGraph.
+
+The agent uses five tools:
+- Calculator
+- Unit converter
+- Date/time
+- Text counter
+- Language lookup
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env    # then fill in your key
+
+cp .env.example .env    # then add your API keys
+
 python main.py
-```
 
-## Structure
+## LangSmith Tracing
 
-- `tools.py` — tool definitions
-- `agent.py` — graph construction
-- `main.py` — interactive CLI
+This project uses LangSmith to trace and monitor the agent workflow.
+
+Add the following to your `.env` file:
+
+```text
+LANGSMITH_TRACING=true
+LANGSMITH_API_KEY="your_langsmith_api_key"
+LANGSMITH_PROJECT=tool-calling-agent
