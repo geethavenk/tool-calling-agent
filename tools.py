@@ -102,7 +102,7 @@ def unit_converter(
 
 
 @tool
-def get_current_datetime(timezone: str = "UTC") -> str:
+def get_current_datetime(timezone: str = "Europe/Berlin") -> str:
     """
     Get the current date and time.
 
@@ -112,8 +112,9 @@ def get_current_datetime(timezone: str = "UTC") -> str:
 
     Args:
         timezone: IANA timezone name, e.g. "Europe/Berlin", "US/Eastern",
-            "Asia/Tokyo". Defaults to "UTC". Pass the user's timezone when
-            it is known; otherwise leave as UTC.
+        "Asia/Tokyo", "UTC". Defaults to "Europe/Berlin", the user's
+        local timezone. Only pass this argument if the user asks about
+        a different location.
 
     Returns:
         A string like "Wednesday, 9 September 2026, 14:32 CEST".
